@@ -14,6 +14,7 @@ body {
   margin: 0 auto;
   padding: 0;
 }
+
 .logo img {
   width: 200px;
 }
@@ -79,61 +80,4 @@ button.button-search:focus {
 
 button.button-search:active {
   transform: scale(1.1);
-}
-
-.pokemons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.pokemon {
-  font-family: 'Cantarell', sans-serif;
-  font-weight: bold;
-  color: #A6131E;
-  display: flex;
-  background: #fff;
-  border: 1px solid #e1e1e1;
-  width: 30%;
-  height: 168px;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 3px;
-  cursor:pointer;
-  min-width: 450px;
-  max-width: 450px;
-}
-
-.pokemon:hover {
-  border-color: #A6131E;
-}
-
-.pokemon img {
-  width: 150px;
-  height:150px
-}
-
-.pokemon-details {
-  margin-left: 10px;
-  width: 100%;
-}
-
-.species {
-  display: flex;
-  justify-content: space-around;
-  font-size: 1.4em;
-  color: #e2e2e2;
-}
-
-.species-title {
-  color: #8a8a8a;
-}
-
-.actived {
-  color: #A6131E;
-}
-
-.name-pokemon, p, h1, h2 {
-  margin: 0;
-  padding: 0;
 }

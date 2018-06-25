@@ -2,13 +2,50 @@ import React, { Component } from 'react'
 import './index.css';
 import axios from 'axios';
 
+import Pokemons from '../../containers/pokemons';
+
 class Home extends Component {
+
+  pokemons = [
+    {
+      id: 1,
+      name: 'Charmander',
+      type: 'fire',
+      image: 'https://i.pinimg.com/originals/79/d9/7c/79d97cd68801eb29a4a5a33e208fb2ff.jpg',
+    },
+    {
+      id: 2,
+      name: 'Pikachu',
+      type: 'fash',
+      image: 'https://www.kumulos.com/wp-content/uploads/2013/10/pikachu-6.png',
+    },
+    {
+      id: 3,
+      name: 'Meowth',
+      type: 'leaf',
+      image: 'https://www.pokegoking.com/wp-content/uploads/Meowth-300x300.png',
+    },
+    {
+      id: 4,
+      name: 'Clefairy',
+      type: 'leaf',
+      image: 'https://orig00.deviantart.net/a269/f/2013/259/e/9/fancy_clefairy_by_kiss_the_iconist-d6mk2lo.png',
+    },
+  ];
+
+  typePokemons = [
+    { id: 1, type: 'leaf', icon: 'fa fa-leaf' },
+    { id: 2, type: 'fire', icon: 'fa fa-free-code-camp' },
+    { id: 3, type: 'water', icon: 'fa fa-tint' },
+    { id: 4, type: 'fash', icon: 'fa fa-bolt' },
+  ]
 
   constructor(props){
     super(props);
     this.state = {
       search : '',
-      pokemons: [],
+      pokemons: this.pokemons,
+      typePokemons: this.typePokemons,
     };
 
     this.fetcthItems = this.fetcthItems.bind(this);
@@ -22,11 +59,12 @@ class Home extends Component {
   }
   
   searchPokemon(event) {
-    this.setState({ search: event.target.value })
+    // this.setState({ search: event.target.value })
+    console.log('ola');
   }
 
   render() {    
-    const { pokemons, search } = this.state;
+    const { pokemons, typePokemons, search } = this.state;
     return (
       <div className="content">
         <div className="content-header">
@@ -43,62 +81,11 @@ class Home extends Component {
             </button>
           </div>
         </div>
+
         <div className="content-main">
-          <div className="pokemons">
-            <div className="pokemon">
-              <img src="https://i.pinimg.com/originals/79/d9/7c/79d97cd68801eb29a4a5a33e208fb2ff.jpg" alt="" />
-              <div className="pokemon-details">
-                <h2>Charmander</h2>
-                <h3 className="species-title">Species</h3>
-                <div className="species">
-                  <i className="fa fa-bolt" aria-hidden="true" />
-                  <i className="fa fa-leaf" aria-hidden="true" />
-                  <i className="fa fa-tint" aria-hidden="true" />
-                  <i className="fa fa-free-code-camp actived" aria-hidden="true" />
-                </div>
-              </div>
-            </div>
-            <div className="pokemon">
-              <img src="https://www.kumulos.com/wp-content/uploads/2013/10/pikachu-6.png" alt="" />
-              <div className="pokemon-details">
-                <h2>Pikachu</h2>
-                <h3 className="species-title">Species</h3>
-                <div className="species">
-                  <i className="fa fa-bolt actived" aria-hidden="true" />
-                  <i className="fa fa-leaf" aria-hidden="true" />
-                  <i className="fa fa-tint" aria-hidden="true" />
-                  <i className="fa fa-free-code-camp" aria-hidden="true" />
-                </div>
-              </div>
-            </div>
-            <div className="pokemon">
-              <img src="https://www.pokegoking.com/wp-content/uploads/Meowth-300x300.png" alt="" />
-              <div className="pokemon-details">
-                <h2>Meowth</h2>
-                <h3 className="species-title">Species</h3>
-                <div className="species">
-                  <i className="fa fa-bolt" aria-hidden="true" />
-                  <i className="fa fa-leaf actived" aria-hidden="true" />
-                  <i className="fa fa-tint" aria-hidden="true" />
-                  <i className="fa fa-free-code-camp" aria-hidden="true" />
-                </div>
-              </div>
-            </div>
-            <div className="pokemon">
-              <img src="https://orig00.deviantart.net/a269/f/2013/259/e/9/fancy_clefairy_by_kiss_the_iconist-d6mk2lo.png" alt="" />
-              <div className="pokemon-details">
-                <h2>Clefairy</h2>
-                <h3 className="species-title">Species</h3>
-                <div className="species">
-                  <i className="fa fa-bolt" aria-hidden="true" />
-                  <i className="fa fa-leaf actived" aria-hidden="true" />
-                  <i className="fa fa-tint" aria-hidden="true" />
-                  <i className="fa fa-free-code-camp" aria-hidden="true" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <Pokemons  pokemons={pokemons} typePokemons={typePokemons} />
         </div>
+
       </div>
     );
   }
