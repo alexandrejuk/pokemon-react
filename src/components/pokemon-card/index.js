@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
 import './index.css';
 
+import Species from './species';
+
 class PokemonCard extends Component {
   render() { 
-    const { pokemons, typePokemons } = this.props;
-    return pokemons.map(pokemon => {
+    const { pokemon: { image, name, type }, typePokemons } = this.props;
       return (
-        <div className="pokemon" key={pokemon.id}>
-          <img src={pokemon.image} alt="" />
+        <div className="pokemon">
+          <img src={image} alt="" />
           <div className="pokemon-details">
-            <h2>{pokemon.name}</h2>
+            <h2>{name}</h2>
             <h3 className="species-title">Species</h3>
-            <div className="species">
-              {typePokemons.map(typePokemon => {
-                if (typePokemon.type === pokemon.type ) return <i className={typePokemon.icon + ' actived'} aria-hidden="true" key={typePokemon.id}></i>
-                return <i className={typePokemon.icon} aria-hidden="true" key={typePokemon.id}></i>
-              })}
-            </div>
+            <Species type={type} typePokemons={typePokemons} />
           </div>
         </div>
       )
-    })
   }
 }
  

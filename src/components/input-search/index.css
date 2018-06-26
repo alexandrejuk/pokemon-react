@@ -1,0 +1,28 @@
+.searchPokemon {
+  width: 600px;
+  text-align: center;
+  margin: 15px auto;
+}
+
+.searchPokemon input {
+  background: transparent;
+  border: none;
+  padding: 16px;
+  border-bottom: solid 2px #A6131E;
+  font-size: 16px;
+  color: #fff;
+  width: 60%;
+  transition:  all 1s ease;
+  right: 0;
+  font-weight: bold;
+}
+
+.searchPokemon input::placeholder {  
+  color: #800009;
+  font-weight: bold;
+}
+
+.searchPokemon input:focus {
+  outline: none;
+  border-color: #fff;
+}

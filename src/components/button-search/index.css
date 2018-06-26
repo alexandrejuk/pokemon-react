@@ -1,0 +1,33 @@
+button.button-search {
+  background: #fff;
+  border: 2px solid #A6131E;
+  box-shadow: 0 0 0 3px #fff;
+  cursor: pointer;
+  width: 130px;
+  border-radius: 21px;
+  padding: 4px;
+  color: #A6131E;
+  font-weight: bold;
+  transition: 0.6s;
+}
+
+button.button-search img {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+button.button-search:focus {
+  outline: none;
+}
+
+.button-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button.button-search:active {
+  transform: scale(1.1);
+}

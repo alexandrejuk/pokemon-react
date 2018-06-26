@@ -8,7 +8,14 @@ class Pokemons extends Component {
     const { pokemons, typePokemons } = this.props;
     return (
       <div className="pokemons">
-        <PokemonCard pokemons={pokemons} typePokemons={typePokemons}/>
+        {pokemons.map(
+          pokemon =>
+            <PokemonCard 
+              pokemon={pokemon}
+              typePokemons={typePokemons} 
+              key={pokemon.id} 
+            />
+        )}
       </div>
     )
   }

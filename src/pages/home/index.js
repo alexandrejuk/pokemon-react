@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import './index.css';
 import axios from 'axios';
 
-import Pokemons from '../../containers/pokemons';
+import Header from '../../components/header';
+import Main from '../../components/main';
+
 
 class Home extends Component {
 
@@ -64,28 +66,11 @@ class Home extends Component {
   }
 
   render() {    
-    const { pokemons, typePokemons, search } = this.state;
+    const { pokemons, typePokemons } = this.state;
     return (
-      <div className="content">
-        <div className="content-header">
-          <div className="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2000px-International_Pok%C3%A9mon_logo.svg.png" alt="" />
-          </div>
-          <div className="searchPokemon">
-            <input name="search" type="text" value={search} onChange={this.searchPokemon.bind(this)} placeholder="Digite sua busca aqui!" />
-            <button className="button-search" onClick={this.fetcthItems}>
-              <div className="button-content">
-                Pesquisar
-                <img src="http://www.purarteadesivos.com.br/wp-content/uploads/2017/04/Pok%C3%A9mon-go.png" alt="" />
-              </div>
-            </button>
-          </div>
-        </div>
-
-        <div className="content-main">
-          <Pokemons  pokemons={pokemons} typePokemons={typePokemons} />
-        </div>
-
+      <div>
+        <Header />
+        <Main pokemons={pokemons} typePokemons={typePokemons}/>
       </div>
     );
   }
