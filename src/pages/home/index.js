@@ -3,50 +3,26 @@ import './index.css';
 import axios from 'axios';
 
 import Main from '../../components/main';
-
+import Loading from '../../components/loading';
 
 class Home extends Component {
 
-  pokemons = [
-    {
-      id: 1,
-      name: 'Charmander',
-      type: 'fire',
-      image: 'https://i.pinimg.com/originals/79/d9/7c/79d97cd68801eb29a4a5a33e208fb2ff.jpg',
-    },
-    {
-      id: 2,
-      name: 'Pikachu',
-      type: 'fash',
-      image: 'https://www.kumulos.com/wp-content/uploads/2013/10/pikachu-6.png',
-    },
-    {
-      id: 3,
-      name: 'Meowth',
-      type: 'leaf',
-      image: 'https://www.pokegoking.com/wp-content/uploads/Meowth-300x300.png',
-    },
-    {
-      id: 4,
-      name: 'Clefairy',
-      type: 'leaf',
-      image: 'https://orig00.deviantart.net/a269/f/2013/259/e/9/fancy_clefairy_by_kiss_the_iconist-d6mk2lo.png',
-    },
-  ];
-
   typePokemons = [
-    { id: 1, type: 'leaf', icon: 'fa fa-leaf' },
-    { id: 2, type: 'fire', icon: 'fa fa-free-code-camp' },
-    { id: 3, type: 'water', icon: 'fa fa-tint' },
-    { id: 4, type: 'fash', icon: 'fa fa-bolt' },
+    { id: 1, type: ['Bug', 'Grass', 'Rock', 'Ground', 'Normal'], icon: 'fa fa-leaf' },
+    { id: 2, type: ['Fire'], icon: 'fa fa-free-code-camp' },
+    { id: 3, type: ['Poison', 'Water'], icon: 'fa fa-tint' },
+    { id: 4, type: ['Electric'], icon: 'fa fa-bolt' },
+    { id: 5, type: ['Ice'], icon: 'fa fa-snowflake-o'},
+    { id: 6, type: ['Bug'], icon: 'fa fa-bug'},
   ]
 
   constructor(props){
     super(props);
     this.state = {
       search : '',
-      pokemons: this.pokemons,
+      pokemons: [],
       typePokemons: this.typePokemons,
+      loading: true,
     };
     
     this.fetchPokemons();
@@ -54,13 +30,12 @@ class Home extends Component {
   }
 
   fetchPokemons() {
-    return axios.get(`http://pokeapi.salestock.net/api/v2/pokemon/`)
-      .then(response => response.data.results.map((pokemon, i) => ({ id: i++, ...pokemon })))
-      .then(pokemons => this.setState({ pokemons }))
+    return axios.get(`http://localhost:3002/pokemons`)
+      .then(response => response.data)
+      .then(pokemons => this.setState({ pokemons, loading: false }))
   }
   
   searchPokemon(event) {
-    // this.setState({ search: event.target.value })
     console.log('ola');
   }
 
@@ -68,7 +43,7 @@ class Home extends Component {
     const { pokemons, typePokemons } = this.state;
     return (
       <div>
-        <Main pokemons={pokemons} typePokemons={typePokemons}/>
+        { this.state.loading ? <Loading /> : <Main pokemons={pokemons} typePokemons={typePokemons}/> }
       </div>
     );
   }
