@@ -5,10 +5,10 @@ import Species from './species';
 
 class PokemonCard extends Component {
   render() { 
-    const { pokemon: { image, name, type }, typePokemons } = this.props;
+    const { pokemon: { img, name, type }, typePokemons } = this.props;
       return (
         <div className="pokemon">
-          <img src={image} alt="" />
+          <img src={img} alt="pokemon" />
           <div className="pokemon-details">
             <h2>{name}</h2>
             <h3 className="species-title">Species</h3>
