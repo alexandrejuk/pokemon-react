@@ -7,8 +7,8 @@ class InputSearch extends Component {
   render() { 
     return ( 
       <div className="searchPokemon">
-        <input name="search" type="text" placeholder="Digite sua busca aqui!" />
-        <ButtonSearch buttonName='Pesquisar' />
+        <input name="search" type="text" placeholder="Search Pokemon" />
+        <ButtonSearch buttonName='Search' />
       </div>
      )
   }

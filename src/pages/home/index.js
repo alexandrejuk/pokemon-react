@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './index.css';
 import axios from 'axios';
 
-import Header from '../../components/header';
 import Main from '../../components/main';
 
 
@@ -49,15 +48,15 @@ class Home extends Component {
       pokemons: this.pokemons,
       typePokemons: this.typePokemons,
     };
+    
+    this.fetchPokemons();
 
-    this.fetcthItems = this.fetcthItems.bind(this);
   }
 
-  fetcthItems() {
+  fetchPokemons() {
     return axios.get(`http://pokeapi.salestock.net/api/v2/pokemon/`)
-      .then(response => response.data.results)
-      .then(pokemons => JSON.stringify(pokemons))
-      .then(pokemons => this.setState({ pokemons }));
+      .then(response => response.data.results.map((pokemon, i) => ({ id: i++, ...pokemon })))
+      .then(pokemons => this.setState({ pokemons }))
   }
   
   searchPokemon(event) {
@@ -69,7 +68,6 @@ class Home extends Component {
     const { pokemons, typePokemons } = this.state;
     return (
       <div>
-        <Header />
         <Main pokemons={pokemons} typePokemons={typePokemons}/>
       </div>
     );
