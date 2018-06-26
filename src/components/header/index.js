@@ -5,7 +5,6 @@ import InputSearch from '../input-search';
 import Logo from '../logo';
 
 class Header extends Component {
-  state = {}
   render() { 
     return (  
       <div className="header">

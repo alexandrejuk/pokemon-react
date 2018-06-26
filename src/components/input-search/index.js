@@ -3,7 +3,6 @@ import './index.css';
 import ButtonSearch from '../button-search';
 
 class InputSearch extends Component {
-  state = {}
   render() { 
     return ( 
       <div className="searchPokemon">
