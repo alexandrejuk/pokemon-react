@@ -1,5 +1,6 @@
 .searchPokemon {
-  width: 600px;
+  min-width: 550px;
+  max-width: 650px;
   text-align: center;
   margin: 15px auto;
 }
