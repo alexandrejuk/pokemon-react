@@ -12,13 +12,10 @@ class Species extends Component {
 
     const checkedType = type => contains(type, pokemonType);
     const getTypes = ({ types }) => types.filter(checkedType);
-    const newType = species => types => ({ ...species, types });
-    
-    const typesPokemon = typePokemons.map(species => {
-      const foundType = newType(species)(getTypes(species));
-      if(foundType.types.length > 0) return isActived(foundType);
-      return noActived(species);
-    });
+    const newType = (species) => ({ ...species, types: getTypes(species) });
+    const compare = (foundType, species) => foundType.types.length > 0 ? isActived(foundType) : noActived(species);
+    const typesPokemon = typePokemons.map(species => compare(newType(species), species));
+
     return (<div className="species">{typesPokemon}</div>);
   }
 
