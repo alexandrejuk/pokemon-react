@@ -8,12 +8,12 @@ import Loading from '../../components/loading';
 class Home extends Component {
 
   typePokemons = [
-    { id: 1, type: ['Bug', 'Grass', 'Rock', 'Ground', 'Normal'], icon: 'fa fa-leaf' },
-    { id: 2, type: ['Fire'], icon: 'fa fa-free-code-camp' },
-    { id: 3, type: ['Poison', 'Water'], icon: 'fa fa-tint' },
-    { id: 4, type: ['Electric'], icon: 'fa fa-bolt' },
-    { id: 5, type: ['Ice'], icon: 'fa fa-snowflake-o'},
-    { id: 6, type: ['Bug'], icon: 'fa fa-bug'},
+    { id: 1, types: ['Bug', 'Grass', 'Rock', 'Ground', 'Normal'], icon: 'fa fa-leaf' },
+    { id: 2, types: ['Fire'], icon: 'fa fa-free-code-camp' },
+    { id: 3, types: ['Poison', 'Water'], icon: 'fa fa-tint' },
+    { id: 4, types: ['Electric'], icon: 'fa fa-bolt' },
+    { id: 5, types: ['Ice'], icon: 'fa fa-snowflake-o'},
+    { id: 6, types: ['Bug'], icon: 'fa fa-bug'},
   ]
 
   constructor(props){
