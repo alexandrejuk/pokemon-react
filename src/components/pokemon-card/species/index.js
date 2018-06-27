@@ -10,8 +10,8 @@ class Species extends Component {
     const noActived = ({ icon, id}) => <i className={icon} aria-hidden="true" key={id}></i>;  
     const isActived = ({ icon, id}) => <i className={icon + ' actived'} aria-hidden="true" key={id}></i>;
 
-    const CheckedType = type => contains(type, pokemonType);
-    const getTypes = ({ types }) => types.filter(CheckedType);
+    const checkedType = type => contains(type, pokemonType);
+    const getTypes = ({ types }) => types.filter(checkedType);
     const newType = species => types => ({ ...species, types });
     
     const typesPokemon = typePokemons.map(species => {
