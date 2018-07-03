@@ -9,7 +9,7 @@ class Header extends Component {
     return (  
       <div className="header">
         < Logo />
-        <InputSearch />
+        {/* <InputSearch /> */}
       </div>
     )
   }
