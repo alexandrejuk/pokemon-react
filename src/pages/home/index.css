@@ -4,4 +4,12 @@ body {
   background: #F8F5F9;
 }
 
+.content {
+  padding-top: 205px;
+}
 
+@media screen and (min-width: 300px) and (max-width: 400px) {
+  .content {
+    padding-top: 225px;
+  }
+}

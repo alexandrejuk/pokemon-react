@@ -1,9 +1,16 @@
 .logo {
-  width: 200px;
+  width: 250px;
   margin: 0 auto;
-  padding: 0;
+  padding-top: 10px;
+  transition: all 0.8s ease;
 }
 
 .logo img {
-  width: 200px;
+  width: 100%;
+}
+
+@media screen and (min-width: 100px) and (max-width: 450px) {
+  .logo {
+    width: 200px;
+  }
 }

@@ -42,7 +42,7 @@ class Home extends Component {
   render() {    
     const { pokemons, typePokemons } = this.state;
     return (
-      <div>
+      <div className="content">
         { this.state.loading ? <Loading /> : <Main pokemons={pokemons} typePokemons={typePokemons}/> }
       </div>
     );

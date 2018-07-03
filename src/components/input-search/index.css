@@ -1,29 +1,42 @@
-.searchPokemon {
-  min-width: 550px;
-  max-width: 650px;
+.search {
   text-align: center;
-  margin: 15px auto;
+  margin: 10px auto;
+  width: 100%;
 }
 
-.searchPokemon input {
+.search-input {
+  width: 230px;
+  max-width: 650px;
   background: transparent;
   border: none;
   padding: 16px;
   border-bottom: solid 2px #A6131E;
   font-size: 16px;
   color: #fff;
-  width: 60%;
   transition:  all 1s ease;
   right: 0;
   font-weight: bold;
 }
 
-.searchPokemon input::placeholder {  
+.search-input::placeholder {  
   color: #800009;
   font-weight: bold;
 }
 
-.searchPokemon input:focus {
+.search-input:focus {
   outline: none;
   border-color: #fff;
+} 
+
+
+@media screen and (min-width: 400px) and (max-width: 649px) {
+  .search-input {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .search-input {
+    width: 400px;
+  }
 }
