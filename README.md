@@ -1,5 +1,8 @@
 # Pokedex Application
 
+## Description
+A Pokemons list(Pokedex) with search input.
+
 ## Instalation
 
 1. Clone the repo: git remote add origin git@github.com:alexandrejuk/pokemon-react.git
