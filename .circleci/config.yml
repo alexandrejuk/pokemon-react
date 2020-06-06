@@ -9,10 +9,10 @@ jobs:
       - checkout
       - node/with-cache:
       - run: echo $CIRCLE_BRANCH
-      - when:
-          condition: $CIRCLE_BRANCH == 'master'
-          steps:
-            - run: echo "Estou na Master"
+      # - when:
+      #     condition: $CIRCLE_BRANCH == 'master'
+      #     steps:
+      #       - run: echo "Estou na Master"
       # - unless:
       #     condition: << parameters.preinstall-foo >>
       #     steps:
