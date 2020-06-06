@@ -11,8 +11,6 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
-          env: 
-            REACT_APP_ENVIRONMENT: live
 workflows:
     build-and-test:
       jobs:
