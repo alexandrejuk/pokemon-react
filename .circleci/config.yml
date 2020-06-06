@@ -8,14 +8,15 @@ jobs:
     steps:
       - checkout
       - node/with-cache:
+      - run: echo $CIRCLE_BRANCH
       - when:
-          condition: $CIRCLE_CI == 'master'
+          condition: $CIRCLE_BRANCH == 'master'
           steps:
-            - run: echo export REACT_APP_PAGAR_ENVIRONMENT=live
-      - unless:
-          condition: $CIRCLE_CI == 'staging'
-          steps:
-            - run: echo export REACT_APP_PAGAR_ENVIRONMENT=test
+            - run: echo "Estou na Master"
+      # - unless:
+      #     condition: << parameters.preinstall-foo >>
+      #     steps:
+      #       - run: echo "don't preinstall
 workflows:
     build-and-test:
       jobs:
