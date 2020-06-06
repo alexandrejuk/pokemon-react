@@ -8,12 +8,14 @@ jobs:
     steps:
       - checkout
       - node/with-cache:
+      - when:
+          condition: $CIRCLE_CI == 'master'
           steps:
-            - run:
-              if: $CIRCLE_BRANCH == 'maste'
-              command: REACT_APP_PAGARME_ENVIRONMENT=test
-            - run: echo $REACT_APP_PAGARME_ENVIRONMENT
-
+            - run: echo export REACT_APP_PAGAR_ENVIRONMENT=live
+      - unless:
+          condition: $CIRCLE_CI == 'staging'
+          steps:
+            - run: echo export REACT_APP_PAGAR_ENVIRONMENT=test
 workflows:
     build-and-test:
       jobs:
