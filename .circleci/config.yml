@@ -9,8 +9,11 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: [[ $CIRCLE_BRANCH == "master" ]] && export REACT_APP_PAGARME_ENVIRONMENT=live || REACT_APP_PAGARME_ENVIRONMENT=test
+            - run:
+              if: $CIRCLE_BRANCH == 'maste'
+              command: REACT_APP_PAGARME_ENVIRONMENT=test
             - run: echo $REACT_APP_PAGARME_ENVIRONMENT
+
 workflows:
     build-and-test:
       jobs:
