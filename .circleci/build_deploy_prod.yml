@@ -7,26 +7,9 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-
+    name: 'Deploy to Netlify'
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: jsmrcaga/action-netlify-deploy@v2.0.0
         with:
-          node-version: '14'
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@1.0.0
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          script: 'npm run build'
-
+          NETLIFY_AUTH_TOKEN: ${{ secrets.MY_TOKEN_SECRET }}
+          NETLIFY_DEPLOY_TO_PROD: true
