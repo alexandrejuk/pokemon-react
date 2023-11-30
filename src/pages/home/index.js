@@ -3674,7 +3674,7 @@ const Home = () => {
    ]
 
    useEffect(() => {
-      setTimeout(() => setLoading(false))
+      setTimeout(() => setLoading(false), 4000)
    })
 
    return (
