@@ -2,7 +2,8 @@
 
 ## Description
 A Pokemons list(Pokedex) with search input.
-
+[![Build Deploy beta](https://github.com/alexandrejuk/pokemon-react/actions/workflows/build_deploy_beta.yml/badge.svg)](https://github.com/alexandrejuk/pokemon-react/actions/workflows/build_deploy_beta.yml)
+[![Build Deploy Prod](https://github.com/alexandrejuk/pokemon-react/actions/workflows/build_deploy_prod.yml/badge.svg)](https://github.com/alexandrejuk/pokemon-react/actions/workflows/build_deploy_prod.yml)
 ## Instalation
 
 1. Clone the repo: git remote add origin git@github.com:alexandrejuk/pokemon-react.git
