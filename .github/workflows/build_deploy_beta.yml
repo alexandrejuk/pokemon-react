@@ -9,7 +9,17 @@ jobs:
   deploy:
     name: 'Pokemon react build and deploy beta'
     steps:
-      - uses: jsmrcaga/action-netlify-deploy@v2.0.0
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build React App
+        run: npm run build
+
+      - name: Netlify Deploy
+        uses: nwtgck/actions-netlify@v1
         with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.MY_TOKEN_SECRET }}
-          NETLIFY_DEPLOY_TO_PROD: true
+          publish-dir: ./build
+          deploy-token: ${{ secrets.MY_TOKEN_SECRET }}
