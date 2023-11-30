@@ -6,9 +6,10 @@ on:
       - v[0-9]+.[0-9]+.[0-9]+
 
 jobs:
-  deploy:
-    name: 'Pokemon react build and deploy production'
-     steps:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
@@ -22,4 +23,4 @@ jobs:
         uses: nwtgck/actions-netlify@v1
         with:
           publish-dir: ./build
-          deploy-token: ${{ secrets.MY_TOKEN_SECRET }}
+          deploy-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
