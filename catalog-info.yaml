@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: pokemon-react
+  annotations:
+    github.com/project-slug: alexandrejuk/pokemon-react
+spec:
+  type: other
+  lifecycle: unknown
+  owner: guests
