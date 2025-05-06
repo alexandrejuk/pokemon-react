@@ -5,6 +5,6 @@ metadata:
   annotations:
     github.com/project-slug: alexandrejuk/pokemon-react
 spec:
-  type: other
-  lifecycle: unknown
-  owner: levelup
+  type: service
+  owner: team-levelup
+  lifecycle: experimental
